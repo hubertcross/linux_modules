@@ -90,9 +90,9 @@ static ssize_t dev_read(struct file *filep, char *buffer, size_t len, loff_t *of
  */
 static ssize_t dev_write(struct file *filep, const char *buffer, size_t len, loff_t *offset)
 {
-   printk(KERN_INFO "That's some shit right there, %x\n", buffer);
+   printk(KERN_INFO "buffer, %x\n", buffer);
    copy_from_user(message, buffer, len);
-   printk(KERN_INFO "That's some shit right there, %s\n", message);
+   printk(KERN_INFO "buffer, %s\n", message);
    // sprintf(message, "%s(%d letters)", buffer, len);   // appending received string with its length
    // size_of_message = strlen(message);                 // store the length of the stored message
    printk(KERN_INFO "ATMELChar: Received %d characters from the user\n", len);
